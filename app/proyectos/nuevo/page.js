@@ -1,12 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function NuevoProducto() {
   const [titulo, setTitulo] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [mensaje, setMensaje] = useState("");
 
+  const [autenticado, setAutenticado] = useState(null);
+ 
+  useEffect(() => {
+  async function comprobarSesion() {
+    const res = await fetch("/api/auth/get-session");
+    const data = await res.json();
+
+    setAutenticado(!!data);
+  }
+
+  comprobarSesion();
+}, []);
+ 
   async function guardarProducto(e) {
     e.preventDefault();
 
@@ -27,6 +40,14 @@ export default function NuevoProducto() {
     setTitulo("");
     setDescripcion("");
   }
+
+if (autenticado === null) {
+  return <p>Cargando...</p>;
+}
+
+if (!autenticado) {
+  return <p>Debes iniciar sesión para acceder a esta página.</p>;
+}
 
   return (
     <main style={{ padding: "20px" }}>

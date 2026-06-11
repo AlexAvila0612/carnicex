@@ -1,7 +1,7 @@
 "use client";
 
 import { authClient } from "@/auth-client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
