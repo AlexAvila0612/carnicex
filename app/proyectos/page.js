@@ -1,4 +1,3 @@
-PS C:\Users\alexa\Desktop\codenode9-auth-backup> type app\page.js
 import LogoutButton from "./LogoutButton";
 
 export default async function Proyectos() {
@@ -34,4 +33,3 @@ export default async function Proyectos() {
     </main>
   );
 }
-PS C:\Users\alexa\Desktop\codenode9-auth-backup> 

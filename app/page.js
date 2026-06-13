@@ -1,35 +1,25 @@
-import LogoutButton from "./LogoutButton";
-
-export default async function Proyectos() {
-  const res = await fetch("http://localhost:3000/api/proyectos", {
-    cache: "no-store",
-  });
-
-  const proyectos = await res.json();
-
+export default function Home() {
   return (
-    <main style={{ padding: "40px", fontFamily: "Arial" }}>
-      <h1>Productos Carnicex</h1>
+    <main style={{ padding: "40px", textAlign: "center" }}>
+      <h1>Carnicex</h1>
 
-      <LogoutButton />
+      <p>
+        Tu carnicería online de confianza. Encuentra carne fresca,
+        embutidos y productos de máxima calidad.
+      </p>
 
-      <br /><br />
-
-      {proyectos.map((p) => (
-        <div
-          key={p.id}
-          style={{
-            border: "1px solid #ccc",
-            borderRadius: "10px",
-            padding: "15px",
-            marginBottom: "15px",
-            boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
-          }}
-        >
-          <h2>{p.titulo}</h2>
-          <p>{p.descripcion}</p>
-        </div>
-      ))}
+      <a
+        href="/proyectos"
+        style={{
+          background: "#b22222",
+          color: "white",
+          padding: "10px 20px",
+          borderRadius: "8px",
+          textDecoration: "none",
+        }}
+      >
+        Ver productos
+      </a>
     </main>
   );
 }
