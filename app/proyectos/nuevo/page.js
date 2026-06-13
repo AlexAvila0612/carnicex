@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+
+
 export default function NuevoProducto() {
   const [titulo, setTitulo] = useState("");
   const [descripcion, setDescripcion] = useState("");
@@ -50,8 +52,10 @@ if (!autenticado) {
 }
 
   return (
-    <main style={{ padding: "20px" }}>
-      <h1>Nuevo Producto</h1>
+  <main style={{ padding: "40px", fontFamily: "Arial" }}>
+  <h1>Productos Carnicex</h1>
+
+ 
 
       <form onSubmit={guardarProducto}>
         <input

@@ -2,10 +2,14 @@
 
 import { authClient } from "@/auth-client";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
+
 
   async function registrar() {
   try {
@@ -31,7 +35,7 @@ export default function LoginPage() {
     });
 
     console.log("LOGIN RESULT:", result);
-    alert("Login correcto");
+    router.push("/proyectos");
   } catch (error) {
     console.error(error);
     alert("Error en login");
