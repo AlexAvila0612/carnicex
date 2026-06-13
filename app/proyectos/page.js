@@ -1,4 +1,4 @@
-import LogoutButton from "./LogoutButton";
+
 
 export default async function Proyectos() {
   const res = await fetch("http://localhost:3000/api/proyectos", {
@@ -11,9 +11,7 @@ export default async function Proyectos() {
     <main style={{ padding: "40px", fontFamily: "Arial" }}>
       <h1>Productos Carnicex</h1>
 
-      <LogoutButton />
-
-      <br /><br />
+      
 
       {proyectos.map((p) => (
         <div
