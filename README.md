@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Carnicex
 
-## Getting Started
+## Descripción
 
-First, run the development server:
+Carnicex es una aplicación web desarrollada como proyecto final del curso. Su objetivo es gestionar un catálogo de productos cárnicos mediante una interfaz sencilla que permite consultar y añadir nuevos productos de forma segura.
+
+La aplicación ha sido construida utilizando Next.js tanto para el frontend como para el backend, aprovechando los Route Handlers para exponer una API propia y SQLite como sistema de almacenamiento de datos. Además, incorpora autenticación de usuarios mediante Better Auth para restringir el acceso a determinadas funcionalidades.
+
+## Funcionalidades
+
+La aplicación permite consultar los productos almacenados en la base de datos y añadir nuevos productos a través de un formulario protegido. Para acceder a las funcionalidades privadas es necesario disponer de una cuenta y haber iniciado sesión.
+
+El sistema de autenticación incluye registro de usuarios, inicio de sesión, cierre de sesión y gestión de sesiones persistentes mediante cookies. Asimismo, se ha implementado una comprobación de acceso que impide utilizar determinadas páginas cuando el usuario no está autenticado.
+
+## Tecnologías utilizadas
+
+El proyecto ha sido desarrollado con Next.js y React. La persistencia de datos se realiza mediante SQLite y la autenticación se gestiona con Better Auth. Para el control de versiones y la gestión del código fuente se ha utilizado Git junto con GitHub.
+
+## Instalación y ejecución
+
+Para ejecutar el proyecto en local es necesario clonar el repositorio e instalar las dependencias:
+
+```bash
+npm install
+```
+
+Una vez completada la instalación, la aplicación puede iniciarse mediante:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Por defecto estará disponible en la dirección:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Estructura general
 
-## Learn More
+La aplicación se organiza en una parte pública y otra privada. Los productos se almacenan en una base de datos SQLite y son gestionados mediante una API propia desarrollada con Route Handlers de Next.js.
 
-To learn more about Next.js, take a look at the following resources:
+Las páginas relacionadas con la creación de productos están protegidas y requieren que el usuario haya iniciado sesión correctamente.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Decisiones técnicas
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Se ha optado por SQLite por su sencillez de configuración y porque resulta suficiente para una aplicación de tamaño reducido. Next.js permite centralizar frontend y backend dentro del mismo proyecto, simplificando el desarrollo y el despliegue.
 
-## Deploy on Vercel
+Para la autenticación se ha utilizado Better Auth debido a su integración con Next.js y a la facilidad para gestionar sesiones y usuarios.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Uso de inteligencia artificial
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Durante el desarrollo del proyecto se utilizó ChatGPT como herramienta de apoyo para la resolución de errores, la configuración de Better Auth, la depuración de problemas relacionados con Next.js y la revisión de fragmentos de código.
+
+Las sugerencias obtenidas fueron analizadas, adaptadas y probadas antes de incorporarse al proyecto final.
+
+## Autor
+
+Alexander Peraza Avila
